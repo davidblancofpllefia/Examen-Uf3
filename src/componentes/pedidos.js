@@ -26,7 +26,7 @@ export const pedidos = {
       </div>
       <div class="col-6 border ">
         <div class="p-3 d-flex">
-          <div class="w-50 Imagen">
+          <div class="w-50 imagen">
             <img src="https://static.damm.com/sites/default/files/config-page/estrella_header_logo/estrella-damm_0.png" alt="" class="w-100">
           </div>
           <div>
@@ -55,13 +55,15 @@ export const pedidos = {
             select.appendChild(option)
           })
 
-        const nombre = document.getElementById("nombre")
-        const descripcion = document.getElementById("descripcion")
-        const imagen = document.getElementById("imagen")
-        bd.forEach(element => {
-            nombre.textContent = `${element.nombre}`
-            descripcion.textContent = `${element.descripcion}`
-            imagen.textContent = `${element.imagen}`
-        });
-    }
+          const nombre = document.getElementById("nombre");
+          const descripcion = document.getElementById("descripcion");
+          const imagen = document.getElementById("imagen");
+          
+          select.addEventListener("click", () => {
+          bd.forEach(element => {
+            nombre.textContent = element.nombre;
+            descripcion.textContent = element.descripcion;
+          });
+    });
+  }
 }
